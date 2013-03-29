@@ -1,0 +1,15 @@
+=form_for @product, :html => {:multipart => true}, :remote => true do |f|
+  =f.label :name
+  =f.text_field :name
+  =f.label :cost
+  =f.number_field :cost
+  =f.label :tags
+  =f.text_field :tags
+  =f.label :description
+  =f.text_area :description
+  =f.label :address
+  =f.text_field :address
+  =f.file_field :image
+  =f.text_field :remote_image_url
+  =f.submit nil, :class => "button radius success"
+  =link_to("Cancel", "#", :"data-clear-photo-form" => true, :class => "button radius alert")

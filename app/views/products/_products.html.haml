@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th
+    %th Name
+    %th Price
+    %th Desc
+    -@products.each do |product|
+      %tr
+        %td= image_tag(product.image)
+        %td= product.name
+        %td= number_to_currency(product.cost)
+        %td= product.description

@@ -15,11 +15,12 @@
 #
 
 class Product < ActiveRecord::Base
-  attr_accessible :name, :description, :image, :cost, :address
+  attr_accessible :name, :description, :image, :cost, :address, :remote_image_url, :tags
 
   before_save :get_coords
   belongs_to :user
   has_and_belongs_to_many :tags
+  mount_uploader :image, PicUploader
 
   private
   def get_coords

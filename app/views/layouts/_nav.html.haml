@@ -1,0 +1,14 @@
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h3= link_to 'Nozama', '#'
+  - if @auth.nil?
+    %section.top-bar-section
+      %ul.right
+        %li= link_to("LOGIN", login_path)
+        %li= link_to("REGISTER", '#', :method => 'delete')
+  -else
+    %section.top-bar-section
+      %ul.right
+        %li= link_to("#{@auth.email}", '#')
+        %li= link_to("LOGOUT", login_path, :method => 'delete')

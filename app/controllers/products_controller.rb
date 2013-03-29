@@ -8,12 +8,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new
-    product.name = params[:product][:name]
-    product.description = params[:product][:description]
-    product.image = params[:product][:image]
-    product.cost = params[:product][:cost]
-    tags = params[:product][:tags].split(", ")
+    binding.pry
+    product = Product.create(params[:product])
+    tags = params[:tags].split(", ")
     product.save
     tags.each do |tag|
       if Tag.exists?(:name => tag)

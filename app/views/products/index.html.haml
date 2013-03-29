@@ -2,10 +2,11 @@
   .small-12.columns
     %h1 Nozama
 
-.row
-  .small-8.small-centered.columns
-    = link_to("Add Product", new_product_path, :remote => true, :class => "button radius alert")
-    #product_form
+-if @auth.present? && (@auth.is_admin == true)
+  .row
+    .small-8.small-centered.columns
+      = link_to("Add Product", new_product_path, :remote => true, :class => "button radius alert")
+      #product_form
 .row
   .small-8.small-centered.columns
     #product_list

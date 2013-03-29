@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
   attr_accessor :name
-  has_many_and_belongs_to :products
+  has_and_belongs_to_many :products
 end

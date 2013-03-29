@@ -11,24 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329141740) do
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.boolean  "is_admin",        :default => false
-    t.decimal  "balance",         :default => 0.0
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-  end
-end
-
 ActiveRecord::Schema.define(:version => 20130329142244) do
 
   create_table "products", :force => true do |t|
@@ -47,4 +29,20 @@ ActiveRecord::Schema.define(:version => 20130329142244) do
     t.integer "product_id"
     t.integer "tag_id"
   end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "is_admin",        :default => false
+    t.decimal  "balance",         :default => 0.0
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
 end

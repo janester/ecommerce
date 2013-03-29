@@ -7,8 +7,10 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate( params[:password] )
       session[:user_id] = user.id
       @auth = user
+      redirect_to(root_path)
     else
       session[:user_id] = nil
+      render :new
     end
   end
 

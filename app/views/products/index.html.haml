@@ -4,10 +4,26 @@
 
 -if @auth.present? && (@auth.is_admin == true)
   .row
-    .small-8.small-centered.columns
+    .small-8.columns
       = link_to("Add Product", new_product_path, :remote => true, :class => "button radius alert")
       #product_form
 .row
-  .small-8.small-centered.columns
+  .small-8.columns
     #product_list
       = render :partial => "products"
+
+.row
+  .large-12.columns
+    #map
+      #map_canvas
+        %script
+          display_map(38.891033,-94.833984, 3)
+          ="add_marker(#{@products.first.lat},#{@products.first.long}, 'test')"
+          - @products.each do |product|
+            = "add_marker(#{product.lat}, #{product.long}, '#{product.name}')"
+
+
+
+
+
+

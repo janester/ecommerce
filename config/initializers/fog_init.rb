@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
   # config.asset_host   = 'https://assets.example.com'              # optional, defaults to nil
 end
 
-CarrierWave.configure {|config| config.fog_directory = 'jane-ecommerce'} if Rails.env.development?
-CarrierWave.configure {|config| config.fog_directory = 'jane-ecommerce'} if Rails.env.test?
-CarrierWave.configure {|config| config.fog_directory = 'jane-ecommerce'} if Rails.env.production?
+CarrierWave.configure {|config| config.fog_directory = 'ryanlee-ecommerce'} if Rails.env.development?
+CarrierWave.configure {|config| config.fog_directory = 'ryanlee-ecommerce'} if Rails.env.test?
+CarrierWave.configure {|config| config.fog_directory = 'ryanlee-ecommerce'} if Rails.env.production?

@@ -7,6 +7,7 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate( params[:password] )
       session[:user_id] = user.id
       @auth = user
+      Notifications.login_message(@auth).deliver
       redirect_to(root_path)
     else
       session[:user_id] = nil

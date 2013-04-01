@@ -12,6 +12,7 @@ gem 'rmagick'
 gem 'remotipart'
 gem 'geocoder'
 gem 'jquery-ui-rails'
+gem 'aws-ses'
 
 
 

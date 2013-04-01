@@ -4,9 +4,14 @@
     %th Name
     %th Price
     %th Desc
+    %th Tags
     -@products.each do |product|
       %tr
         %td= image_tag(product.image.thumb.url)
         %td= product.name
         %td= number_to_currency(product.cost)
         %td= product.description
+        %td
+          -product.tags.each do |tag|
+            %span= link_to("#{tag.name} - #{tag.products.length}", filter_products_path(tag.id), :remote => true, :class => "button radius tiny")
+

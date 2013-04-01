@@ -7,3 +7,5 @@
 //= require 'foundation_4/js/vendor/zepto.js'
 //= require 'foundation_4/js/foundation.min.js'
 //= require 'myjs'
+//= require 'search'
+

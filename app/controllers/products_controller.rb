@@ -21,4 +21,19 @@ class ProductsController < ApplicationController
     end
     @products = Product.order(:name)
   end
+
+  def filter
+    tag = Tag.find(params[:tag_id])
+    @products = tag.products
+  end
+
+  def search
+    text = params[:text]
+    @products = Product.where("name @@ :q or description @@ :q or image @@ :q or address @@ :q", :q => text)
+    tags = Tag.where('name @@ :q', :q => text)
+    tags = tags.map{|x| x.products}.flatten
+    @products += tags
+    @products.uniq!
+    render :filter
+  end
 end
